@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 import pandas as pd
 from datetime import datetime
 
-
 load_dotenv()
 
 DB_HOST = st.secrets["DB_HOST"]
@@ -14,6 +13,8 @@ DB_USER = st.secrets["DB_USER"]
 DB_PASSWORD = st.secrets["DB_PASSWORD"]
 DB_NAME = st.secrets["DB_NAME"]
 DATABASE_URL = f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+
+
 mysql_engine = create_engine(DATABASE_URL,
                             pool_recycle=3600,
                             pool_pre_ping=True
